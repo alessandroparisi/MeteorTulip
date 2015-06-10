@@ -2,9 +2,15 @@
 
 ## Routes
 
-### `/` : Home
+###### `/` : Home
 
-### `/sell` : Sell
+  This is where people buy stuff.
 
-### `/profile` : Profile
+######`/sell` : Sell
+
+  This is where people sell stuff.
+
+###### `/profile` : Profile
+
+  This is where people see profile stuff.
 
