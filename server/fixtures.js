@@ -1,18 +1,3 @@
-// if (Posts.find().count() === 0) { 
-// 	Posts.insert({
-// 		title: 'Introducing Telescope',
-// 		url: 'http://sachagreif.com/introducing-telescope/'
-// 	});
-// 	Posts.insert({
-// 		title: 'Meteor',
-// 		url: 'http://meteor.com'
-// 	});
-// 	Posts.insert({
-// 		title: 'The Meteor Book',
-// 		url: 'http://themeteorbook.com'
-// 	}); 
-// }
-
 function insertPhone(OS, company, model, capacities, colors) {
 	Phones.insert({
 		os: OS, // at first, only iOS or Android. Maybe blackberry and others later.
