@@ -1,0 +1,38 @@
+<template name="filterInfo">
+  <div class="row">
+    <div class="radio">
+      {{#each companies}}
+        <label>
+          <input id="{{this}}" name="company" type="radio"> {{this}}
+        </label>
+      {{/each}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="radio">
+      {{#each models}}
+        <label>
+          <input id="{{this}}" name="model" type="radio"> {{this}}
+        </label>
+      {{/each}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="checkbox">
+      {{#each storages}}
+        <label>
+          <input id="{{this}}" name="storages" type="checkbox"> {{this}}
+        </label>
+      {{/each}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="checkbox">
+      {{#each colors}}
+        <label>
+          <input id="{{this}}" name="colors" type="checkbox"> {{this}}
+        </label>
+      {{/each}}
+    </div>
+  </div>
+</template>
