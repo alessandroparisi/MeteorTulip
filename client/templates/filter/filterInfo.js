@@ -31,18 +31,15 @@ Meteor.startup(function(){
   Session.set("filters", filters);
 });
 
+
 Template.filterInfo.events({
   'change .checkbox':function(e){
+
     //Get and make a copy of filters
     var allFilters = Session.get("filters");
     var allFilters = _.extend({}, allFilters);
 
     var name = e.target.name;
-    // //TODO make sessions object wiht empty stuff on start
-    // //TODO Maybe not idk yoloswag
-    // if(_.isUndefined(allFilters[name])) {
-    //   allFilters[name] = [];
-    // }
 
     //Get the specific filter array
     var specificFilter = allFilters[name];
@@ -61,13 +58,53 @@ Template.filterInfo.events({
     Session.set("filters", allFilters);
 
     var f = Session.get("filters");
-    console.log(f);
+    //console.log(f);
   },
   'click .radio':function(e){
+
+    // var allFilters = Session.get("filters");
+    // var myName = e.target.name;
+    // var id = e.target.id;
+    // allFilters[myName] = id;
+    // console.log(myName);
+
+    // // console.log("id: " + id);
+    // // console.log(allFilters[name]);
+    // // console.log(allFilters);
+    // console.log("QQQ")
+    // if(id === allFilters[name]){
+    //   console.log("ASDFASDF");
+    //   document.getElementById(id).checked = false;
+    //   allFilters["model"] = "";
+    //   if(name === "company"){
+    //     allFilters["company"] = "";
+    //   }
+    // }
+    // else{
+    //   allFilters[name] = id;
+    // }
+
     var allFilters = Session.get("filters");
-    var name = e.target.name;
-    allFilters[name] = e.target.id;
+    var myName = e.target.name;
+    allFilters[myName] = e.target.id;
+    if(myName === "company"){
+      allFilters["model"] = "";
+    }
+    allFilters["storages"] = [];
+    allFilters["colors"] = [];
+    var storageCheckBoxes = getArrayFromTag(document.getElementsByName("storages"));
+    var colorCheckBoxes = getArrayFromTag(document.getElementsByName("colors"));
+    var checkBoxes = _.union(storageCheckBoxes, colorCheckBoxes);
+    for(var i=0; i<checkBoxes.length; i++){
+      checkBoxes[i].checked = false;
+    }
+
     Session.set("filters", allFilters);
   }
 
 });
+
+var getArrayFromTag = function(nodeList) {
+  //get the NodeList and transform it into an array
+  return Array.prototype.slice.call(nodeList);
+}

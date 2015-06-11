@@ -12,6 +12,11 @@ Template.buy.helpers({
   }
 });
 
+Deps.autorun(function() {
+  Meteor.subscribe('searchAds', Session.get("filters"));
+});
+
+
 // function makeStrFromArr(array) {
 // 	var str = '';
 // 	for(var i = 0; i < array.length; i++) {
@@ -22,34 +27,3 @@ Template.buy.helpers({
 // 	}
 // 	return str;
 // }
-
-Template.storage.events({
-  'change input':function(e){
-    //Get and make a copy of filters
-    var allFilters = Session.get("filters");
-    var allFilters = _.extend({}, allFilters);
-
-
-    //TODO make sessions object wiht empty stuff on start
-    //TODO Maybe not idk yoloswag
-    if(_.isUndefined(allFilters.storage)) {
-      allFilters.storage = [];
-    }
-
-    //Get GB Filters
-    var storageFilters = allFilters.storage;
-
-    if(e.target.checked){
-      storageFilters.push(e.target.name);
-    }
-    else{
-      var index = storageFilters.indexOf(e.target.name);
-      storageFilters.splice(index, 1);
-    }
-    Session.set("filters", allFilters);
-
-
-    var f = Session.get("filters");
-    console.log(f.storage);
-  }
-})

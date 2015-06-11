@@ -12,12 +12,11 @@ Meteor.publish('searchAds', function (filters) { // tags is an array of tag ids 
 	// 	return Phones.find({capacities: {$in: filters.storage}})
 	// }
     //return Phones.find();
-	if(_.isEmpty(filters.company)){
-		console.log(Ads.find().fetch());
+	if(filters.company === ""){
 		return Ads.find();
 	}
 	else{
-		if(_.isEmpty(filters.model)){
+		if(filters.model === ""){
 			return Ads.find({company: filters.company})
 		}
 		else{
