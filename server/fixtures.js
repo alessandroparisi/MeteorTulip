@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 801f70c9422977d006f6905eda281a1b9bf4e652
 function insertPhone(OS, company, model, storage, color) {
 	Phones.insert({
 		os: OS, // at first, only iOS or Android. Maybe blackberry and others later.
