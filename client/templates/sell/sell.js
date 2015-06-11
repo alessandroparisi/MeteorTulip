@@ -17,18 +17,23 @@ Template.sell.helpers({
         var selectedModel = Session.get("selectedModel");
         var storages = Phones.find({model: selectedModel}, {fields: {'storage':1}}).fetch().map(function(x) { return x.storage; });
         return storages[0];
+    },
+    picked: function() {
+        return Session.get("selectedModel") && Session.get("selectedColor") && Session.get("selectedStorage");
     }
 });
 
 Template.sell.events({
-    "change #company": function(e){
+    "click #company": function(e){
         //TODO for some weird reason, e.target.innerText is empty string
         Session.set("selectedCompany", e.currentTarget.innerText);
-
         Session.set("selectedModel", "");
     },
     "click #model": function(e){
         Session.set("selectedModel", e.target.innerText);
+
+        Session.set("selectedColor", "");
+        Session.set("selectedStorage", "");
     },
     "click #color": function(e){
         Session.set("selectedColor", e.target.innerText);
