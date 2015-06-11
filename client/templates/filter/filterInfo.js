@@ -62,34 +62,20 @@ Template.filterInfo.events({
   },
   'click .radio':function(e){
 
-    // var allFilters = Session.get("filters");
-    // var myName = e.target.name;
-    // var id = e.target.id;
-    // allFilters[myName] = id;
-    // console.log(myName);
-
-    // // console.log("id: " + id);
-    // // console.log(allFilters[name]);
-    // // console.log(allFilters);
-    // console.log("QQQ")
-    // if(id === allFilters[name]){
-    //   console.log("ASDFASDF");
-    //   document.getElementById(id).checked = false;
-    //   allFilters["model"] = "";
-    //   if(name === "company"){
-    //     allFilters["company"] = "";
-    //   }
-    // }
-    // else{
-    //   allFilters[name] = id;
-    // }
-
     var allFilters = Session.get("filters");
     var myName = e.target.name;
     allFilters[myName] = e.target.id;
+
+    //Deselect all model radio buttons and remove them from filters
     if(myName === "company"){
       allFilters["model"] = "";
+      var radioButtons = getArrayFromTag(document.getElementsByName("model"));
+      for(var i=0; i<radioButtons.length; i++){
+        radioButtons[i].checked = false;
+      }
     }
+
+    //deselect all checkboxes
     allFilters["storages"] = [];
     allFilters["colors"] = [];
     var storageCheckBoxes = getArrayFromTag(document.getElementsByName("storages"));
