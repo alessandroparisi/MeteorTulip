@@ -5,9 +5,10 @@
 # but you can also edit it by hand.
 
 meteor-platform
-accounts-ui
 accounts-password
 iron:router
 mizzao:bootstrap-3
 sacha:spin
 alanning:roles
+insecure
+ian:accounts-ui-bootstrap-3
