@@ -1,27 +1,12 @@
-// if (Posts.find().count() === 0) { 
-// 	Posts.insert({
-// 		title: 'Introducing Telescope',
-// 		url: 'http://sachagreif.com/introducing-telescope/'
-// 	});
-// 	Posts.insert({
-// 		title: 'Meteor',
-// 		url: 'http://meteor.com'
-// 	});
-// 	Posts.insert({
-// 		title: 'The Meteor Book',
-// 		url: 'http://themeteorbook.com'
-// 	}); 
-// }
-
-function insertPhone(OS, company, model, capacities, colors) {
+function insertPhone(OS, company, model, storage, color) {
 	Phones.insert({
 		os: OS, // at first, only iOS or Android. Maybe blackberry and others later.
 		company: company, 
 		model: model,
-		capacities: capacities,
-		colors: colors
+		storage: storage,
+		color: color
 	})
-};
+}
 
 if(Phones.find().count() === 0) {
 
@@ -35,6 +20,7 @@ if(Phones.find().count() === 0) {
 	insertPhone('iOS', 'Apple', 'iPhone 4', ['8', '16', '32'], ['Black', 'White']);
 
 	// Android phones
+	insertPhone('Android', 'Google', 'Nexus 5', ['8', '16'], ['Black', 'White', 'Red']);
 	// TODO
 }
 
