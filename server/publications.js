@@ -36,3 +36,4 @@ Meteor.publish('searchAds', function (filters) { // tags is an array of tag ids 
 		}
 	}
 });
+

@@ -1,0 +1,58 @@
+<template name="sell">
+	<div class="row">
+		{{#if companies}}
+			<h3>Select Company</h3>
+		{{/if}}
+	</div>
+	<div class="row">
+		<div class="btn-group" data-toggle="buttons">
+			{{#each companies}}
+				<label id="company" class="btn btn-primary">
+	    			<input type="radio" name="options" autocomplete="off"> {{this}}
+	  			</label>
+			{{/each}}
+		</div>
+	</div>
+	<div class="row">
+		{{#if models}}
+			<h3>Select Model</h3>
+		{{/if}}
+	</div>
+	<div class="row">
+		<div class="btn-group" data-toggle="buttons">
+			{{#each models}}
+				<label id="model" class="btn btn-primary">
+	    			<input type="radio" name="options" autocomplete="off"> {{this}}
+	  			</label>
+			{{/each}}
+		</div>
+	</div>
+	<div class="row">
+		{{#if colors}}
+			<h3>Select Color</h3>
+		{{/if}}
+	</div>
+	<div class="row">
+		<div class="btn-group" data-toggle="buttons">
+			{{#each colors}}
+				<label id="color" class="btn btn-primary">
+	    			<input type="radio" name="options" autocomplete="off"> {{this}}
+	  			</label>
+			{{/each}}
+		</div>
+	</div>
+	<div class="row">
+		{{#if storages}}
+			<h3>Select Storage</h3>
+		{{/if}}
+	</div>
+	<div class="row">
+		<div class="btn-group" data-toggle="buttons">
+			{{#each storages}}
+				<label id="storage" class="btn btn-primary">
+	    			<input type="radio" name="options" autocomplete="off"> {{this}}
+	  			</label>
+			{{/each}}
+		</div>
+	</div>
+</template>

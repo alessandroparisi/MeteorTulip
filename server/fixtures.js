@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 801f70c9422977d006f6905eda281a1b9bf4e652
 function insertPhone(OS, company, model, storage, color) {
 	Phones.insert({
 		os: OS, // at first, only iOS or Android. Maybe blackberry and others later.
@@ -20,6 +23,8 @@ if(Phones.find().count() === 0) {
 	insertPhone('iOS', 'Apple', 'iPhone 5', ['16', '32', '64'], ['Black', 'White']);
 	insertPhone('iOS', 'Apple', 'iPhone 4s', ['8', '16', '32', '64'], ['Black', 'White']);
 	insertPhone('iOS', 'Apple', 'iPhone 4', ['8', '16', '32'], ['Black', 'White']);
+	insertPhone('Android', 'Google', 'Nexus 5', ['8', '16'], ['Black', 'White', 'Red']);
+
 }
 
 function insertAd(company, model, storage, color) {
