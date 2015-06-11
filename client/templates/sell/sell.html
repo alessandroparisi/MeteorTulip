@@ -1,7 +1,7 @@
 <template name="sell">
 	<div class="row">
 		{{#if companies}}
-			<h3>Select Company</h3>
+			<h4>Select Company</h4>
 		{{/if}}
 	</div>
 	<div class="row">
@@ -15,7 +15,7 @@
 	</div>
 	<div class="row">
 		{{#if models}}
-			<h3>Select Model</h3>
+			<h4>Select Model</h4>
 		{{/if}}
 	</div>
 	<div class="row">
@@ -29,7 +29,7 @@
 	</div>
 	<div class="row">
 		{{#if colors}}
-			<h3>Select Color</h3>
+			<h4>Select Color</h4>
 		{{/if}}
 	</div>
 	<div class="row">
@@ -43,7 +43,7 @@
 	</div>
 	<div class="row">
 		{{#if storages}}
-			<h3>Select Storage</h3>
+			<h4>Select Storage</h4>
 		{{/if}}
 	</div>
 	<div class="row">
@@ -55,4 +55,10 @@
 			{{/each}}
 		</div>
 	</div>
+	<div class="row">
+		{{#if picked}}
+			<button type="button" class="btn btn-default">Next</button>
+		{{/if}}
+	</div>
+
 </template>
