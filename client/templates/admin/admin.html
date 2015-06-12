@@ -1,3 +1,15 @@
 <template name="admin">
-This is the admin page only if you are an admin.
+	<div class="row">
+		<div class="col-md-2">
+			<div class="btn-group-vertical" role="group"> 
+  				<button type="button" data-route="userAdmin" class="btn btn-default btn-admin-route">User management</button>
+  				<button type="button" data-route="transactionAdmin" class="btn btn-default btn-admin-route">Transaction management</button>
+  				<button type="button" data-route="adAdmin" class="btn btn-default btn-admin-route">Ad management</button>
+			</div>
+		</div>
+		<div class="col-md-10">	
+			{{> Template.dynamic template=getTemplate }}	
+		</div>
+
+	</div>
 </template>
