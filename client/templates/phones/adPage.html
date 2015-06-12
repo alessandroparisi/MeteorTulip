@@ -1,6 +1,13 @@
 <template name="adPage">
-	{{company}}
-	{{model}}
-	{{color}}
-	{{storage}}
+	<div class="thumbnail">
+      <!-- <img src="..." alt="..."> -->
+      <div class="caption">
+        <h3>{{model}} - {{company}}</h3>
+        <p>Storage (GB): {{storage}}</p>
+        <p>Color: {{color}}</p>
+        <p style="color:gray;font-size:75%">Posted by {{username}}</p>
+        
+        <p><a href="{{pathFor 'adPage'}}" class="btn btn-primary" role="button">Buy this phone</a></p>
+      </div>
+    </div>
 </template>

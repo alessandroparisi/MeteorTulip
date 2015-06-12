@@ -66,32 +66,42 @@ Template.filterInfo.events({
     var f = Session.get("filters");
     //console.log(f);
   },
-  'click .radio':function(e){
+  'click [name=company]':function(e){
 
     var allFilters = Session.get("filters");
     var myName = e.target.name;
     allFilters[myName] = e.target.id;
 
     //Deselect all model radio buttons and remove them from filters
-    if(myName === "company"){
-      allFilters["model"] = "";
-      var radioButtons = getArrayFromTag(document.getElementsByName("model"));
-      for(var i=0; i<radioButtons.length; i++){
-        radioButtons[i].checked = false;
-      }
-    }
+    allFilters["model"] = "";
+    var radioButtons = getArrayFromTag(document.getElementsByName("model"));
+     uncheckAll(radioButtons);
+
 
     //deselect all checkboxes
     allFilters["storages"] = [];
     allFilters["colors"] = [];
     var storageCheckBoxes = getArrayFromTag(document.getElementsByName("storages"));
     var colorCheckBoxes = getArrayFromTag(document.getElementsByName("colors"));
-    var checkBoxes = _.union(storageCheckBoxes, colorCheckBoxes);
-    for(var i=0; i<checkBoxes.length; i++){
-      checkBoxes[i].checked = false;
-    }
+    var checkboxes = _.union(storageCheckBoxes, colorCheckBoxes);
+    uncheckAll(checkboxes);
+
+    Session.set("filters", allFilters);
+  },
+  'click [name=model]':function(e){
+
+    var allFilters = Session.get("filters");
+    var myName = e.target.name;
+    allFilters[myName] = e.target.id;
+
+    //deselect all checkboxes
+    allFilters["storages"] = [];
+    allFilters["colors"] = [];
+    var storageCheckBoxes = getArrayFromTag(document.getElementsByName("storages"));
+    var colorCheckBoxes = getArrayFromTag(document.getElementsByName("colors"));
+    var checkboxes = _.union(storageCheckBoxes, colorCheckBoxes);
+    uncheckAll(checkboxes);
 
     Session.set("filters", allFilters);
   }
-
 });
