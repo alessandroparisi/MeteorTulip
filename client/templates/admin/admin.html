@@ -2,14 +2,28 @@
 	<div class="row">
 		<div class="col-md-2">
 			<div class="btn-group-vertical" role="group"> 
-  				<button type="button" data-route="userAdmin" class="btn btn-default btn-admin-route">User management</button>
-  				<button type="button" data-route="transactionAdmin" class="btn btn-default btn-admin-route">Transaction management</button>
-  				<button type="button" data-route="adAdmin" class="btn btn-default btn-admin-route">Ad management</button>
+  			<a href="{{ pathFor 'admin' adminType='user-admin' }}"
+    			role="button" 
+          data-route="{{userAdminTemplateName}}"
+    			class="btn btn-default btn-admin-route {{ isActive userAdminTemplateName }}">
+    					User management
+        </a>
+        <a href="{{ pathFor 'admin' adminType='transaction-admin' }}"
+          role="button" 
+          data-route="{{transactionAdminTemplateName}}"
+    			class="btn btn-default btn-admin-route {{ isActive transactionAdminTemplateName }}">
+    					Transaction management
+        </a>
+        <a href="{{ pathFor 'admin' adminType='ad-admin' }}"
+          role="button" 
+          data-route="{{adAdminTemplateName}}"
+    			class="btn btn-default btn-admin-route {{ isActive adAdminTemplateName }}">
+    					Ad management
+        </a>
 			</div>
 		</div>
 		<div class="col-md-10">	
-			{{> Template.dynamic template=getTemplate }}	
+			{{> Template.dynamic template=templateName }}	
 		</div>
-
 	</div>
 </template>

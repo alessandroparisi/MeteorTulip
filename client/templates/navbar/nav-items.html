@@ -5,7 +5,7 @@
 		</li>
 		{{#if isInRole 'admin' }}
 		  <li class="{{ activeIfTemplateIs 'admin' }}">
-		    <a href="{{ pathFor 'admin' }}">Admin</a>
+		    <a href="{{ pathFor 'admin' adminType='user-admin' }}">Admin</a>
 		  </li>
 		{{/if}}
 	{{/if}}

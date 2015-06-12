@@ -1,0 +1,55 @@
+<template name="userAdmin">
+	<h2>User administration</h2>
+	<p>In this template, the admin can modify a user's permission.</p>
+	<table class="table table-striped table-bordered">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Username</th>
+				<th>Roles</th>
+				<th>Date of creation</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each users}}
+				<tr>
+					<td>{{_id}}</td>
+					<td>{{username}}</td>
+					<td>
+						<ul class="list-group">
+							{{#each roles}}
+								<li class="list-group-item">
+									{{this}}
+								</li>
+							{{/each}}
+							<li id="{{_id}}" class="list-group-item btn-warning btn-change-role">
+								Edit roles
+							</li>
+						</ul>
+						<button id="{{_id}}" class="btn btn-warning btn-change-role">
+							Edit roles
+						</button>
+					</td>
+					<td>{{createdAt}}</td>
+				</tr>
+			{{/each}}
+		</tbody>
+	</table>
+	<div class="modal fade">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title">Edit Role</h4>
+	      </div>
+	      <div class="modal-body">
+	        <p>One fine body&hellip;</p>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-primary">Save changes</button>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+</template>	
