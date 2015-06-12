@@ -20,8 +20,15 @@ Template.filterInfo.helpers({
   }
 
 });
+Template.filterInfo.destroyed = function(){
+  resetFilters();
+}
 
 Meteor.startup(function(){
+  resetFilters();
+});
+
+var resetFilters = function(){
   var filters = {
     "company": "",
     "model" : "",
@@ -29,8 +36,7 @@ Meteor.startup(function(){
     "colors": []
   }
   Session.set("filters", filters);
-});
-
+}
 
 Template.filterInfo.events({
   'change .checkbox':function(e){
@@ -89,8 +95,3 @@ Template.filterInfo.events({
   }
 
 });
-
-var getArrayFromTag = function(nodeList) {
-  //get the NodeList and transform it into an array
-  return Array.prototype.slice.call(nodeList);
-}

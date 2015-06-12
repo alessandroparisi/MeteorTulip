@@ -22,7 +22,12 @@ Template.sell.helpers({
         return Session.get("selectedModel") && Session.get("selectedColor") && Session.get("selectedStorage");
     }
 });
-
+Template.sell.destroyed = function(){
+    Session.set("selectedCompany", "");
+    Session.set("selectedModel", "");
+    Session.set("selectedColor", "");
+    Session.set("selectedStorage", "");
+}
 Template.sell.events({
     "click #company": function(e){
         //TODO for some weird reason, e.target.innerText is empty string
@@ -31,7 +36,6 @@ Template.sell.events({
     },
     "click #model": function(e){
         Session.set("selectedModel", e.target.innerText);
-
         Session.set("selectedColor", "");
         Session.set("selectedStorage", "");
     },
