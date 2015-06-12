@@ -24,20 +24,6 @@ Template.filterInfo.destroyed = function(){
   resetFilters();
 }
 
-Meteor.startup(function(){
-  resetFilters();
-});
-
-var resetFilters = function(){
-  var filters = {
-    "company": "",
-    "model" : "",
-    "storages": [],
-    "colors": []
-  }
-  Session.set("filters", filters);
-}
-
 Template.filterInfo.events({
   'change .checkbox':function(e){
 

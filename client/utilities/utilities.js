@@ -6,4 +6,14 @@ uncheckAll = function(array) {
 	for(var i=0; i<array.length; i++){
 	      array[i].checked = false;
 	}
-}
+};
+
+resetFilters = function(){
+  var filters = {
+    "company": "",
+    "model" : "",
+    "storages": [],
+    "colors": []
+  }
+  Session.set("filters", filters);
+};

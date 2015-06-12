@@ -18,7 +18,6 @@ Meteor.startup(function() {
 
 	// Recreate users everytime
 	// TODO: fix this once we have transaction logic and stuff
-	Meteor.users.remove({});
 	if(Meteor.users.find().count() === 0){
 	  insertUsers();
 	}
