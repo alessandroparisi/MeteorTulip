@@ -40,5 +40,8 @@ Template.sell.events({
     },
     "click #storage": function(e){
         Session.set("selectedStorage", e.target.innerText);
+    },
+    "click #next": function(e){
+        Meteor.call("addAd", Session.get("selectedCompany"), Session.get("selectedModel"), Session.get("selectedColor"), Session.get("selectedStorage"));
     }
 });

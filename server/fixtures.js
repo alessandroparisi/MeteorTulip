@@ -22,28 +22,30 @@ if(Phones.find().count() === 0) {
 
 }
 
-function insertAd(company, model, storage, color) {
+function insertAd(company, model, storage, color, createdAt, username) {
 	Ads.insert({
 		company: company, 
 		model: model,
 		storage: storage,
-		color: color
+		color: color,
+		createdAt: createdAt,
+		username: username
 	})
 }
 
 if(Ads.find().count() === 0) {
 
 	// iPhones
-	insertAd('Apple', 'iPhone 6', '16', 'Gold');
-	insertAd('Apple', 'iPhone 5', '32', 'Gold');
-	insertAd('Apple', 'iPhone 5s', '16', 'Silver');
-	insertAd('Apple', 'iPhone 5c', '16', 'White');
-	insertAd('Apple', 'iPhone 4', '16', 'Black');
-	insertAd('Apple', 'iPhone 4s', '8', 'White');
-	insertAd('Apple', 'iPhone 4', '32', 'White');
-	insertAd('Apple', 'iPhone 6', '128', 'Space Gray');
-	insertAd('Apple', 'iPhone 5', '16', 'Gold');
-	insertAd('Apple', 'iPhone 6 Plus', '128', 'Silver');
-	insertAd('Apple', 'iPhone 4', '32', 'Black');
-	insertAd('Apple', 'iPhone 5', '16', 'White');
+	insertAd('Apple', 'iPhone 6', '16', 'Gold', new Date(), 'Ray');
+	insertAd('Apple', 'iPhone 5', '32', 'Gold', new Date(), 'Ray');
+	insertAd('Apple', 'iPhone 5s', '16', 'Silver', new Date(), 'Ray');
+	insertAd('Apple', 'iPhone 5c', '16', 'White', new Date(), 'Ray');
+	insertAd('Apple', 'iPhone 4', '16', 'Black', new Date(), 'Ray');
+	insertAd('Apple', 'iPhone 4s', '8', 'White', new Date(), 'Ray');
+	insertAd('Apple', 'iPhone 4', '32', 'White', new Date(), 'Ray');
+	insertAd('Apple', 'iPhone 6', '128', 'Space Gray', new Date(), 'Ray');
+	insertAd('Apple', 'iPhone 5', '16', 'Gold', new Date(), 'Ray');
+	insertAd('Apple', 'iPhone 6 Plus', '128', 'Silver', new Date(), 'Ray');
+	insertAd('Apple', 'iPhone 4', '32', 'Black', new Date(), 'Ray');
+	insertAd('Apple', 'iPhone 5', '16', 'White', new Date(), 'Ray');
 }
