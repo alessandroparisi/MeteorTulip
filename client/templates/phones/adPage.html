@@ -1,13 +1,27 @@
 <template name="adPage">
-	<div class="thumbnail">
-      <!-- <img src="..." alt="..."> -->
-      <div class="caption">
-        <h3>{{model}} - {{company}}</h3>
-        <p>Storage (GB): {{storage}}</p>
-        <p>Color: {{color}}</p>
-        <p style="color:gray;font-size:75%">Posted by {{username}}</p>
-        
-        <p><a href="{{pathFor 'adPage'}}" class="btn btn-primary" role="button">Buy this phone</a></p>
-      </div>
-    </div>
+	<div class="col-md-6">
+		<div class="thumbnail">
+	      <!-- <img src="..." alt="..."> -->
+	      <div class="caption">
+	        <h3>{{model}} - {{company}}</h3>
+	        <p>Storage (GB): {{storage}}</p>
+	        <p>Color: {{color}}</p>
+	        <p style="color:gray;font-size:75%">Posted by {{username}}</p>
+	        <p><a href="{{pathFor 'adPage'}}" class="btn btn-primary" role="button">Buy this phone</a></p>
+	      </div>
+    	</div>
+	</div>
+	<div class="col-md-6">
+		<div class="thumbnail">
+	      <!-- <img src="..." alt="..."> -->
+	      <div class="caption">
+	       	<h3>Delivery Information</h3>
+	       	<div>
+	       		<label for="address">Adress:</label>
+  				<input type="text" name="address" id="address">
+  			</div>
+	      </div>
+    	</div>
+	</div>
+
 </template>

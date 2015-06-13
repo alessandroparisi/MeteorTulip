@@ -13,7 +13,7 @@ Template.buy.helpers({
 });
 
 Deps.autorun(function() {
-  Meteor.subscribe('searchAds', Session.get("filters"));
+  Meteor.subscribeWithPagination('searchAds', Session.get("filters"));
 });
 
 
