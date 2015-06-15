@@ -4,7 +4,7 @@ Meteor.publish('phones', function() {
 
 Meteor.publish('searchAds', function (filters, limit) { // tags is an array of tag ids ['foo', 'baz']
 
-
+	console.log(filters);
 	//TODO filters.company is null sometimes but why? shouldn't the on startup work?
 	//Not like the app crashes but I dont even get it... like even when checking if its null it still gives error
 	//Maybe with undefined checks and null checks of filters it might not crash? So far no crash
