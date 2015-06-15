@@ -16,4 +16,5 @@ resetFilters = function(){
     "colors": []
   }
   Session.set("filters", filters);
+  Session.set("limit", 16);
 };

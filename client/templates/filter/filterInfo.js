@@ -93,7 +93,6 @@ Template.filterInfo.events({
 
     //add the query string and go to route
     var q = Router.current().params.query;
-    console.log(q);
     q[myName] = myId;
     Router.go('buy', {}, {
       query: q

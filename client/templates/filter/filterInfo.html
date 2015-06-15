@@ -1,19 +1,32 @@
+<!-- TODO checked= is not working with these types of buttons... find out what correct way to write it. -->
 <template name="filterInfo">
   <div class="row">
     <div class="btn-group" data-toggle="buttons">
       {{#each companies}}
-        <label for="{{this}}" class="btn btn-primary filterRadio">
-            <input id="{{this}}" type="radio" name="company" autocomplete="off" checked="{{isSelectedCompany this}}"> {{this}}
-        </label>
+        {{#if isSelectedCompany this}}
+          <label for="{{this}}" class="btn btn-primary filterRadio active">
+              <input id="{{this}}" type="radio" name="company" autocomplete="off"> {{this}}
+          </label>
+        {{else}}
+          <label for="{{this}}" class="btn btn-primary filterRadio">
+            <input id="{{this}}" type="radio" name="company" autocomplete="off"> {{this}}
+          </label>
+        {{/if}}
       {{/each}}
     </div>
   </div>
   <div class="row">
     <div lass="btn-group" data-toggle="buttons">
       {{#each models}}
-        <label for="{{this}}" class="btn btn-primary filterRadio">
-            <input id="{{this}}" type="radio" name="model" autocomplete="off" checked="{{isSelectedCompany this}}"> {{this}}
-        </label>
+        {{#if isSelectedModel this}}
+          <label for="{{this}}" class="btn btn-primary filterRadio active">
+              <input id="{{this}}" type="radio" name="model" autocomplete="off"> {{this}}
+          </label>
+        {{else}}
+          <label for="{{this}}" class="btn btn-primary filterRadio">
+              <input id="{{this}}" type="radio" name="model" autocomplete="off"> {{this}}
+          </label>
+        {{/if}}
       {{/each}}
     </div>
   </div>
