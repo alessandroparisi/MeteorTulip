@@ -1,0 +1,6 @@
+// AdminConfig = {
+//   collections: {
+//     Ads: {},
+//     Phones: {}
+//   }
+// };

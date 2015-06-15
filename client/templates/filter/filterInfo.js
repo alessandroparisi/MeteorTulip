@@ -1,4 +1,20 @@
 Template.filterInfo.helpers({
+  isSelectedCompany: function(company){
+    var filters = Session.get("filters");
+    return company === filters.company;
+  },
+  isSelectedModel: function(model){
+    var filters = Session.get("filters");
+    return model === filters.model;
+  },
+  isSelectedColor: function(color){
+    var filters = Session.get("filters");
+    return filters.colors.indexOf(color) > -1;
+  },
+  isSelectedStorage: function(storage){
+    var filters = Session.get("filters");
+    return filters.storages.indexOf(storage) > -1;
+  },
   companies: function() {
     var companies = _.uniq(Phones.find({}, {fields: {'company':1}}).fetch().map(function(x) { return x.company; }), true);
     return companies;
@@ -10,12 +26,12 @@ Template.filterInfo.helpers({
   },
   colors: function() {
     var filters = Session.get("filters");
-    var colors = Phones.find({model: filters.model}, {fields: {'color':1}}).fetch().map(function(x) { return x.color; });
+    var colors = Phones.find({company: filters.company, model: filters.model}, {fields: {'color':1}}).fetch().map(function(x) { return x.color; });
     return colors[0];
   },  
   storages: function() {
     var filters = Session.get("filters");
-    var storages = Phones.find({model: filters.model}, {fields: {'storage':1}}).fetch().map(function(x) { return x.storage; });
+    var storages = Phones.find({company: filters.company, model: filters.model}, {fields: {'storage':1}}).fetch().map(function(x) { return x.storage; });
     return storages[0];
   }
 
@@ -24,74 +40,62 @@ Template.filterInfo.destroyed = function(){
   resetFilters();
 }
 
-Meteor.startup(function(){
-  resetFilters();
-});
 
-var resetFilters = function(){
-  var filters = {
-    "company": "",
-    "model" : "",
-    "storages": [],
-    "colors": []
-  }
-  Session.set("filters", filters);
-}
-
+//TODO I can fix the route.go to make a function that will take in the filters and 
+//route appropriately (Set query params)
+//Not sure about the case where they Click apple, should we keep the model param?
+//TODO restructure this when we have a better idea about what were doing
 Template.filterInfo.events({
   'change .checkbox':function(e){
 
-    //Get and make a copy of filters
-    var allFilters = Session.get("filters");
-    var allFilters = _.extend({}, allFilters);
+    var myName = e.target.name;
+    var myId = e.target.id;
 
-    var name = e.target.name;
-
-    //Get the specific filter array
-    var specificFilter = allFilters[name];
+    var q = Router.current().params.query;
 
     //if check box is checked add it, if its not remove it the item
     if(e.target.checked){
-      specificFilter.push(e.target.id);
-
+      if(_.isUndefined(q[myName])){
+        q[myName] = myId;
+      }
+      else{
+        q[myName] = q[myName] + "-" + myId;
+      }
     }
     else{
-      var index = specificFilter.indexOf(e.target.id);
-      specificFilter.splice(index, 1);
-    }
-
-    //Update the session filters
-    Session.set("filters", allFilters);
-
-    var f = Session.get("filters");
-    //console.log(f);
-  },
-  'click .radio':function(e){
-
-    var allFilters = Session.get("filters");
-    var myName = e.target.name;
-    allFilters[myName] = e.target.id;
-
-    //Deselect all model radio buttons and remove them from filters
-    if(myName === "company"){
-      allFilters["model"] = "";
-      var radioButtons = getArrayFromTag(document.getElementsByName("model"));
-      for(var i=0; i<radioButtons.length; i++){
-        radioButtons[i].checked = false;
+      if(!_.isUndefined(q[myName])){
+        var arr = q[myName].split("-");
+        if(!_.isEmpty(arr)){
+          var index = arr.indexOf(e.target.id);
+          arr.splice(index, 1);
+          if(_.isEmpty(arr)){
+            delete(q[myName]);
+          }
+          else{
+            q[myName] = arr.join("-");
+          }
+        }
       }
     }
 
-    //deselect all checkboxes
+    //add the query string and go to route
+    Router.go('buy', {}, {
+      query: q
+    });
+  },
+  'change .filterRadio :input':function(e){
+    var allFilters = Session.get("filters");
+    var myId = e.target.id;
+    var myName = e.target.name;
+
     allFilters["storages"] = [];
     allFilters["colors"] = [];
-    var storageCheckBoxes = getArrayFromTag(document.getElementsByName("storages"));
-    var colorCheckBoxes = getArrayFromTag(document.getElementsByName("colors"));
-    var checkBoxes = _.union(storageCheckBoxes, colorCheckBoxes);
-    for(var i=0; i<checkBoxes.length; i++){
-      checkBoxes[i].checked = false;
-    }
 
-    Session.set("filters", allFilters);
+    //add the query string and go to route
+    var q = Router.current().params.query;
+    q[myName] = myId;
+    Router.go('buy', {}, {
+      query: q
+    });
   }
-
 });
