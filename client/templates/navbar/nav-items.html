@@ -4,8 +4,8 @@
 		  <a href="{{ pathFor 'profile' }}">Profile</a>
 		</li>
 		{{#if isInRole 'admin' }}
-		  <li class="{{ activeIfTemplateIs 'admin' }}">
-		    <a href="{{ pathFor 'admin' adminType='user-admin' }}">Admin</a>
+		  <li class="{{ activeIfTemplateIs 'adminDashboard' }}">
+		    <a href="{{ pathFor 'adminDashboard' }}">Admin</a>
 		  </li>
 		{{/if}}
 	{{/if}}

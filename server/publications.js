@@ -36,20 +36,20 @@ Meteor.publish('searchAds', function (filters) { // tags is an array of tag ids 
 	}
 });
 
-Meteor.publish('userAdmin', function() {
-	// Only allow admin users to view all users
-	if(Roles.userIsInRole(this.userId, [ADMIN])) {
-		return Meteor.users.find({}, {
-			fields: {
-				'username': 1,
-				'roles': 1,
-				'createdAt': 1
-			}
-		});
-	}
-	else {
-		this.stop();
-		return;
-	}
-});
+// Meteor.publish('userAdmin', function() {
+// 	// Only allow admin users to view all users
+// 	if(Roles.userIsInRole(this.userId, [ADMIN])) {
+// 		return Meteor.users.find({}, {
+// 			fields: {
+// 				'username': 1,
+// 				'roles': 1,
+// 				'createdAt': 1
+// 			}
+// 		});
+// 	}
+// 	else {
+// 		this.stop();
+// 		return;
+// 	}
+// });
 
