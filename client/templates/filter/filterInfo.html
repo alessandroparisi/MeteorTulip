@@ -1,19 +1,32 @@
+<!-- TODO checked= is not working with these types of buttons... find out what correct way to write it. -->
 <template name="filterInfo">
   <div class="row">
-    <div class="radio">
+    <div class="btn-group" data-toggle="buttons">
       {{#each companies}}
-        <label>
-          <input id="{{this}}" name="company" type="radio"> {{this}}
-        </label>
+        {{#if isSelectedCompany this}}
+          <label for="{{this}}" class="btn btn-primary filterRadio active">
+              <input id="{{this}}" type="radio" name="company" autocomplete="off"> {{this}}
+          </label>
+        {{else}}
+          <label for="{{this}}" class="btn btn-primary filterRadio">
+            <input id="{{this}}" type="radio" name="company" autocomplete="off"> {{this}}
+          </label>
+        {{/if}}
       {{/each}}
     </div>
   </div>
   <div class="row">
-    <div class="radio">
+    <div lass="btn-group" data-toggle="buttons">
       {{#each models}}
-        <label>
-          <input id="{{this}}" name="model" type="radio"> {{this}}
-        </label>
+        {{#if isSelectedModel this}}
+          <label for="{{this}}" class="btn btn-primary filterRadio active">
+              <input id="{{this}}" type="radio" name="model" autocomplete="off"> {{this}}
+          </label>
+        {{else}}
+          <label for="{{this}}" class="btn btn-primary filterRadio">
+              <input id="{{this}}" type="radio" name="model" autocomplete="off"> {{this}}
+          </label>
+        {{/if}}
       {{/each}}
     </div>
   </div>
@@ -21,7 +34,7 @@
     <div class="checkbox">
       {{#each storages}}
         <label>
-          <input id="{{this}}" name="storages" type="checkbox"> {{this}}
+          <input id="{{this}}" name="storages" type="checkbox" checked="{{isSelectedStorage this}}"> {{this}}
         </label>
       {{/each}}
     </div>
@@ -30,7 +43,7 @@
     <div class="checkbox">
       {{#each colors}}
         <label>
-          <input id="{{this}}" name="colors" type="checkbox"> {{this}}
+          <input id="{{this}}" name="colors" type="checkbox" checked="{{isSelectedColor this}}"> {{this}}
         </label>
       {{/each}}
     </div>

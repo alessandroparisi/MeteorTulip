@@ -162,3 +162,7 @@ body {
 button.btn-admin-route:focus {
   outline:0 !important;
 }
+
+.hiddenAd {
+  opacity: 0;
+}
