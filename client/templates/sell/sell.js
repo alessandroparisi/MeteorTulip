@@ -43,12 +43,3 @@ Template.sell.destroyed = function(){
     Session.set("selectedColor", "");
     Session.set("selectedStorage", "");
 }
-
-Template.sell.events({
-	"click #paypal": function(e){
-
-		console.log("clicked paypal");
-
-        Meteor.call("payoutPaypal");
-    }
-});

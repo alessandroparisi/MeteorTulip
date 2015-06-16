@@ -29,9 +29,12 @@ Template.sellAccount.helpers({
 });
 
 Template.sellAccount.events({
-    "click #next": function(e){
-        Session.set("sellTemplate", "sellPayment");
-        Session.set("stepList", Session.get("stepList") + " > Payment");
+    "click #nextAccount": function(e){
+        // Session.set("sellTemplate", "sellPayment");
+        // Session.set("stepList", Session.get("stepList") + " > Payment");
+
+        //TODO 
+        console.log($("#inputAddress").val());
 
         //TODO put at end of wizard
         // Meteor.call("addAd", Session.get("selectedCompany"), Session.get("selectedModel"), Session.get("selectedColor"), Session.get("selectedStorage"));

@@ -40,12 +40,13 @@ Template.sellSpecs.events({
     "click #storage": function(e){
         Session.set("selectedStorage", e.target.innerText);
     },
-    "click #next": function(e){
-        console.log("clicked123");
-        Session.set("sellTemplate", "sellAccount");
-        Session.set("stepList", Session.get("stepList") + " > Account Information");
-
-        //TODO put at end of wizard
-        // Meteor.call("addAd", Session.get("selectedCompany"), Session.get("selectedModel"), Session.get("selectedColor"), Session.get("selectedStorage"));
+    "click #nextSpecs": function(e){
+        if(Meteor.userId()){
+            Session.set("sellTemplate", "sellAccount");
+            Session.set("stepList", Session.get("stepList") + " > Account Information");
+        } else {
+            Session.set("sellTemplate", "sellAuth");
+            Session.set("stepList", Session.get("stepList") + " > Authentication");
+        }
     }
 });
