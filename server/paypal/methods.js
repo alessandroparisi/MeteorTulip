@@ -82,5 +82,10 @@ Meteor.methods({
     res.data['userId'] = this.userId;
     PaypalPayments.insert(res.data);
     return res.data;
+  },
+  callBackendCode: function(params) {
+    console.log('you sent up the parameters' + params);
+
+    //here you will do all your paypal tracking. The params should have information regarding the customer.
   }
 });
