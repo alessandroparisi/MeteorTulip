@@ -1,0 +1,96 @@
+<template name="sellAccount">
+	<div class="row">
+		<h3>Phone Specifications</h3>
+	</div>
+
+	<div class="row">
+		<p>{{selectedCompany}}</p>
+	</div>
+
+	<div class="row">
+		<p>{{selectedModel}}</p>
+	</div>
+
+	<div class="row">
+		<p>{{selectedColor}}</p>
+	</div>
+
+	<div class="row">
+		<p>{{selectedStorage}}</p>
+	</div>
+
+	<div class="row">
+		<h3>Account Information</h3>
+	</div>
+
+	<!-- If user is logged in, do not put an account creation or login button -->
+	{{#if currentUser}}
+	{{else}}
+		<div class="row">
+			<p>Please Log In, or Register below.</p>
+		</div>
+		<div class="row">
+			<h4>Registration</h4>
+		</div>
+		<form>
+			<div class="row">
+				<div class="form-group">
+					<label for="inputUsername">Username</label>
+					<input type="text" class="form-control" id="inputUsername" placeholder="Rayceo">
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group">
+					<label for="inputEmail">Email</label>
+					<input type="email" class="form-control" id="inputEmail" placeholder="Ray@tulip.ceo">
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group">
+					<label for="inputPassword">Password</label>
+					<input type="password" class="form-control" id="inputPassword" placeholder="alenotceo">
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group">
+					<label for="inputRePassword">Re-enter Password</label>
+					<input type="password" class="form-control" id="inputRePassword" placeholder="alenotceo">
+				</div>
+			</div>
+		</form>
+	{{/if}}
+	<div class="row">
+		<h4>Shipping Address</h4>
+	</div>
+	<form>
+		<div class="row">
+			<div class="form-group">
+				<label for="inputAddress">Address</label>
+				<input type="text" class="form-control" id="inputAddress" placeholder="1337 Rayceo street">
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group">
+				<label for="inputZip">Zip code</label>
+				<input type="text" class="form-control" id="inputZip" placeholder="94118">
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group">
+				<label for="inputCity">City</label>
+				<input type="text" class="form-control" id="inputCity" placeholder="Montreal">
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group">
+				<label for="inputCountry">Country</label>
+				<input type="text" class="form-control" id="inputCountry" placeholder="Canada">
+			</div>
+		</div>
+		{{#if filled}}
+			<div class="row">
+				<button id="next" type="submit" class="btn btn-default">Next</button>
+			</div>
+		{{/if}}
+	</form>
+</template>
