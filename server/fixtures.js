@@ -72,7 +72,7 @@ function insertTransaction(ad, seller_email, buyer_email, seller_address, buyer_
 if(Transactions.find().count() === 0) {
 	var ads = Ads.find().fetch();
 	for(var i = 0; i < ads.length; i++) {
-		insertTransaction(ads[i], 'seller@test.com', 'buyer@test.com', 'address1', 'address2', BUYER_FOUND);
+		insertTransaction(ads[i], 'seller@test.com', 'buyer@test.com', 'address1', 'address2', TRADE_STATE.BUYER_FOUND);
 	}
 }
 
