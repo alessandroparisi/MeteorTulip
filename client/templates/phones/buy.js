@@ -1,6 +1,14 @@
+var count = 0;
+
+var canScroll = true;
+
+var PAGE_SIZE = 16;
+var load_offset = 2/3;
+var MAX_ADS = 200;
+
 Template.buy.helpers({
   phoneRows: function() {
-  	var phones = Ads.find({}).fetch();
+  	var phones = Ads.find({}, {sort: {createdAt: -1}}).fetch();
   	var size = 4;
   	var chunks = [];
   	while(phones.length > size) {
@@ -10,24 +18,16 @@ Template.buy.helpers({
   	chunks.push({row: phones});
   	return chunks;
   },
-
-  // loadInitialPage: function (){
-  //   console.log("count: " + count);
-  //   console.log("adcount: " + adCount);
-  //   if($(".hiddenAd").length >= adCount){
-  //     initialAnimate();
-  //   }
-  // }
+  initializeAds: function (){
+    Meteor.defer(function () {
+      if($(".hiddenAd").length <= PAGE_SIZE){
+        initialAnimate();
+      }
+    });
+  }
 });
 
-var count = 0;
-var adCount = 0;
 
-var canScroll = true;
-
-var PAGE_SIZE = 16;
-var load_offset = 2/3;
-var MAX_ADS = 100;
 
 $(window).scroll(function(){
   if(Session.get("limit") < MAX_ADS){
@@ -48,7 +48,6 @@ $(window).scroll(function(){
 
 var initialAnimate = function(){
   $(".hiddenAd").each(function(){
-    console.log($(this));
     if(checkVisible($(this))){
       if($(this).css("opacity") === "0"){
         $(this).animate({opacity: 1});
@@ -68,7 +67,6 @@ function checkVisible(elm) {
 
 Deps.autorun(function() {
   Meteor.subscribe('searchAds', Session.get("filters"), Session.get("limit"));
-  //adCount = Ads.find({}).count();
   canScroll = true;
 });
 
