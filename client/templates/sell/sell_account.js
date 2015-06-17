@@ -36,8 +36,38 @@ Template.sellAccount.events({
         Session.set("selectedZip", $("#inputZip").val());
         Session.set("selectedCountry", $("#inputCountry").val());
 
+        var phone = {
+            company: Session.get("selectedCompany"),
+            model: Session.get("selectedModel"),
+            color: Session.get("selectedColor"),
+            storage: Session.get("selectedStorage")
+        };
+
+        var price = Session.get('phonePrice');
+
+        var condition = {
+            screen: Session.get('screenCondition'),
+            frame: Session.get('frameCondition'),
+            buttons: Session.get('buttonsCondition'),
+            battery_life: Session.get('batteryCondition'),
+            camera: Session.get('cameraCondition')
+        };
+
+        var account_info = {
+            seller_address: Session.get('selectedAddress'),
+            seller_city: Session.get('selectedCity'), 
+            seller_country: Session.get('selectedCountry'),
+            seller_zip: Session.get('selectedZip') 
+        };
+
         //TODO put after payment
-        Meteor.call("addAd", Session.get("selectedCompany"), Session.get("selectedModel"), Session.get("selectedColor"), Session.get("selectedStorage"));
+        console.log("About call addAd");
+        Meteor.call("addAd", 
+            phone,
+            price,
+            condition,
+            account_info
+        );
 
         Session.set("sellTemplate", "sellPayment");
         Session.set("stepList", Session.get("stepList") + " > Payment");

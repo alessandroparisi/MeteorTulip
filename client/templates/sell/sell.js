@@ -23,7 +23,10 @@ Template.sell.helpers({
 	},
 	selectedSpecs: function (){
 		return Session.get("selectedSpecs");
-	}
+	},
+    conditions: function() {
+        return PhoneConditions.find();
+    }
 });
 
 Template.sell.created = function(){
@@ -55,29 +58,6 @@ Template.sell.created = function(){
 
     Session.set("selectedSpecs", false);
 }
-Template.sell.events({
-    "click #company": function(e){
-        //TODO for some weird reason, e.target.innerText is empty string
-        Session.set("selectedCompany", e.currentTarget.innerText);
-        Session.set("selectedModel", "");
-    },
-    "click #model": function(e){
-        Session.set("selectedModel", e.target.innerText);
-        Session.set("selectedColor", "");
-        Session.set("selectedStorage", "");
-    },
-    "click #color": function(e){
-        Session.set("selectedColor", e.target.innerText);
-    },
-    "click #storage": function(e){
-        Session.set("selectedStorage", e.target.innerText);
-    },
-    "click #next": function(e){
-        console.log("calling addAD");
-        Meteor.call("addAd", Session.get("selectedCompany"), Session.get("selectedModel"), Session.get("selectedColor"), Session.get("selectedStorage"));
-        console.log("addAD called");
-    }
-});
 
 Template.sell.destroyed = function(){
 	Session.set("sellTemplate", "sellSpecs");

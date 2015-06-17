@@ -27,14 +27,6 @@ if(Phones.find().count() === 0) {
 
 }
 
-var sampleCondition = {
-	screen: 'like_new',
-	frame: 'like_new',
-	buttons: 'like_new',
-	battery_life: 'like_new',
-	camera: 'like_new'
-};
-
 function insertAd(company, model, storage, color, price, condition, createdAt, email) {
 	Ads.insert({
 		company: company, 
@@ -48,158 +40,100 @@ function insertAd(company, model, storage, color, price, condition, createdAt, e
 	})
 }
 
+var sampleCondition = {
+	screen: 'like_new',
+	frame: 'like_new',
+	buttons: 'like_new',
+	battery_life: 'like_new',
+	camera: 'like_new'
+};
+
 if(Ads.find().count() === 0) {
 
 	// iPhones
-	insertAd('Apple', 'iPhone 6', '16', 'Gold', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5', '32', 'Gold', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5s', '16', 'Silver', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5c', '16', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '16', 'Black', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4s', '8', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '32', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 6', '128', 'Space Gray', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5', '16', 'Gold', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 6 Plus', '128', 'Silver', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '32', 'Black', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5', '16', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 6', '16', 'Gold', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5', '32', 'Gold', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5s', '16', 'Silver', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5c', '16', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '16', 'Black', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4s', '8', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '32', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 6', '128', 'Space Gray', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5', '16', 'Gold', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 6 Plus', '128', 'Silver', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '32', 'Black', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5', '16', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5s', '16', 'Silver', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5c', '16', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '16', 'Black', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4s', '8', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '32', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 6', '128', 'Space Gray', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5', '16', 'Gold', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 6 Plus', '128', 'Silver', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '32', 'Black', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5', '16', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5s', '16', 'Silver', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5c', '16', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '16', 'Black', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4s', '8', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '32', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 6', '128', 'Space Gray', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5', '16', 'Gold', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 6 Plus', '128', 'Silver', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '32', 'Black', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5', '16', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 6', '16', 'Gold', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5', '32', 'Gold', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5s', '16', 'Silver', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5c', '16', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '16', 'Black', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4s', '8', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '32', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 6', '128', 'Space Gray', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5', '16', 'Gold', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 6 Plus', '128', 'Silver', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '32', 'Black', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5', '16', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 6', '16', 'Gold', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5', '32', 'Gold', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5s', '16', 'Silver', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5c', '16', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '16', 'Black', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4s', '8', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '32', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 6', '128', 'Space Gray', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5', '16', 'Gold', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 6 Plus', '128', 'Silver', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '32', 'Black', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5', '16', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5s', '16', 'Silver', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5c', '16', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '16', 'Black', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4s', '8', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '32', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 6', '128', 'Space Gray', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5', '16', 'Gold', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 6 Plus', '128', 'Silver', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '32', 'Black', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5', '16', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5s', '16', 'Silver', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5c', '16', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '16', 'Black', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4s', '8', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '32', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 6', '128', 'Space Gray', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5', '16', 'Gold', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 6 Plus', '128', 'Silver', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '32', 'Black', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5', '16', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 6', '16', 'Gold', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5', '32', 'Gold', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5s', '16', 'Silver', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5c', '16', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '16', 'Black', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4s', '8', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '32', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 6', '128', 'Space Gray', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5', '16', 'Gold', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 6 Plus', '128', 'Silver', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '32', 'Black', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5', '16', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 6', '16', 'Gold', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5', '32', 'Gold', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5s', '16', 'Silver', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5c', '16', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '16', 'Black', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4s', '8', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '32', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 6', '128', 'Space Gray', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5', '16', 'Gold', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 6 Plus', '128', 'Silver', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '32', 'Black', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5', '16', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5s', '16', 'Silver', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5c', '16', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '16', 'Black', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4s', '8', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '32', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 6', '128', 'Space Gray', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5', '16', 'Gold', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 6 Plus', '128', 'Silver', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '32', 'Black', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5', '16', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5s', '16', 'Silver', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5c', '16', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '16', 'Black', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4s', '8', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '32', 'White', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 6', '128', 'Space Gray', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5', '16', 'Gold', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 6 Plus', '128', 'Silver', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '32', 'Black', new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5', '16', 'White', new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 6', '16', 'Gold', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 5', '32', 'Gold', 200, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 5s', '16', 'Silver', 300, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 5c', '16', 'White', 250, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 4', '16', 'Black', 100, sampleCondition, new Date(), 'ray@bay.bay');
+
 }
 
-function insertTransaction(ad, seller_email, buyer_email, seller_address, buyer_address, trade_state) {
-	Transactions.insert({
-		ad: ad,
-		seller_email: seller_email,
-		buyer_email: buyer_email,
-		seller_address: seller_address,
-		buyer_address: buyer_address,
-		trade_state: trade_state
-	})	
+// var sampleProfile = Profiles.findOne({userId: Users.find({}).fetch()[0]._id});
+
+// function insertTransaction(ad, seller_email, trade_state) {
+// 	Transactions.insert({
+// 		ad: ad,
+// 		seller_profile: seller_email,
+// 		trade_state: trade_state
+// 	})	
+// }
+
+// if(Transactions.find().count() === 0) {
+// 	var ads = Ads.find().fetch();
+// 	for(var i = 0; i < ads.length; i++) {
+// 		insertTransaction(ads[i], sampleProfile, TRADE_STATE.CREATED);
+// 	}
+// }
+
+function createConditionObject(form_val, real_val) {
+	return {
+		form_val: form_val,
+		real_val: real_val
+	};
 }
 
-if(Transactions.find().count() === 0) {
-	var ads = Ads.find().fetch();
-	for(var i = 0; i < ads.length; i++) {
-		insertTransaction(ads[i], 'seller@test.com', 'buyer@test.com', 'address1', 'address2', TRADE_STATE.BUYER_FOUND);
+var conditions = [
+	{
+		title: 'Frame Condition',
+		id: 'frameCondition',
+		form: [
+			createConditionObject('like_new', 'Like New'),
+			createConditionObject('scratches', 'Scratches'),
+			createConditionObject('cracks', 'Cracks')
+		]
+	},
+	{
+		title: 'Screen Condition',
+		id: 'screenCondition',
+		form: [
+			createConditionObject('like_new', 'Like New'),
+			createConditionObject('scratches', 'Scratches'),
+			createConditionObject('cracks', 'Cracks')
+		]
+	},
+	{
+		title: 'Buttons Condition',
+		id: 'buttonsCondition',
+		form: [
+			createConditionObject('like_new', 'Like New'),
+			createConditionObject('hard_to_press', 'Hard to press'),
+			createConditionObject('buttons_stuck', 'Stuck')
+		]
+	},
+	{
+		title: 'Battery Life',
+		id: 'batteryCondition',
+		form: [
+			createConditionObject('like_new', 'Like New'),
+			createConditionObject('high_efficiency', '70% and above'),
+			createConditionObject('mid_efficiency', '50% and above'),
+			createConditionObject('low_efficiency', 'Less than 50%')
+		]
+	},
+	{
+		title: 'Camera Condition',
+		id: 'cameraCondition',
+		form: [
+			createConditionObject('like_new', 'Like New'),
+			createConditionObject('broken', 'Broken')
+		]
+	}
+];
+
+if(PhoneConditions.find().count() === 0) {
+	for(var i = 0; i < conditions.length; i++) {
+		PhoneConditions.insert(conditions[i]);
 	}
 }
 
