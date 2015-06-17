@@ -2,6 +2,14 @@ Meteor.publish('phones', function() {
 	return Phones.find();
 });
 
+Meteor.publish('phoneConditions', function() {
+	return PhoneConditions.find();
+});
+
+Meteor.publish('profiles', function() {
+	return Profiles.find();
+});
+
 Meteor.publish('searchAds', function (filters, limit) { // tags is an array of tag ids ['foo', 'baz']
 
 	//TODO filters.company is null sometimes but why? shouldn't the on startup work?

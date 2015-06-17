@@ -4,58 +4,26 @@
 	</div>
 	
 	<form>
+		{{#each conditions}}
+			<div class="row">
+				<p>{{title}}</p>
+			</div>
+			<div class="row">
+				<select id="{{id}}">
+					{{#each form}}
+						<option value="{{form_val}}">{{real_val}}</option>
+					{{/each}}
+				</select>
+			</div>
+		{{/each}}
 		<div class="row">
-			<p>Frame Condition</p>
+			Price:
+			<input id="phonePrice" type="number" name="phonePrice" />
 		</div>
-		<div class="row">
-			<select id="frameCondition">
-				<option value="like_new">Like New</option>
-				<option value="scratches">Scratches</option>
-				<option value="cracked">Cracks</option>
-			</select>
-		</div>
-		<div class="row">
-			<p>Screen Condition</p>
-		</div>
-		<div class="row">
-			<select id="screenCondition">
-				<option value="like_new">Like New</option>
-				<option value="scratches">Scratches</option>
-				<option value="cracked">Cracks</option>
-			</select>
-		</div>
-		<div class="row">
-			<p>Buttons Condition</p>
-		</div>
-		<div class="row">
-			<select id="buttonsCondition">
-				<option value="like_new">Like New</option>
-				<option value="hard_to_press">Hard to Press</option>
-				<option value="buttons_stuck">Stuck</option>
-			</select>
-		</div>
-		<div class="row">
-			<p>Camera Condition</p>
-		</div>
-		<div class="row">
-			<select id="cameraCondition">
-				<option value="like_new">Like New</option>
-				<option value="blurred">Blurred</option>
-			</select>
-		</div>
-		<div class="row">
-			<p>Battery Life</p>
-		</div>
-		<div class="row">
-			<select id="batteryCondition">
-				<option value="like_new">Like New</option>
-				<option value="high_efficient">70% and above</option>
-				<option value="mid_efficient">50% and above</option>
-				<option value="low_efficient">Less than 50%</option>
-			</select>
-		</div>
+		{{#if priceSet}}
 		<div class="row">
 			<button id="nextCondition" type="button" class="btn btn-default">Next</button>
 		</div>
+		{{/if}}
 	</form>
 </template>
