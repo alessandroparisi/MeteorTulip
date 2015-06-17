@@ -56,6 +56,8 @@ Template.sell.created = function(){
     Session.set("selectedZip", "");
     Session.set("selectedCountry", "");
 
+    Session.set("phonePrice", "");
+
     Session.set("selectedSpecs", false);
 }
 
@@ -83,6 +85,8 @@ Template.sell.destroyed = function(){
     Session.set("selectedCity", "");
     Session.set("selectedZip", "");
     Session.set("selectedCountry", "");
+    
+    Session.set("phonePrice", "");
     
     Session.set("selectedSpecs", false);
 }
