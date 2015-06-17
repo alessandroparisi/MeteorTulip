@@ -166,3 +166,11 @@ button.btn-admin-route:focus {
 .hiddenAd {
   opacity: 0;
 }
+
+
+.paypal-but {
+  backgound:url("/images/paypal-buy-button.png");
+  background-repeat: no-repeat;
+  width:40px;
+  height:80px;
+}
