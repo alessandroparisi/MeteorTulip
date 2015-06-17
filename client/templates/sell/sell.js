@@ -1,32 +1,59 @@
 Template.sell.helpers({
-    companies: function() {
-    	var companies = _.uniq(Phones.find({}, {fields: {'company':1}}).fetch().map(function(x) { return x.company; }), true);
-        return companies;
-    },
-    models: function() {
-        var selectedCompany = Session.get("selectedCompany");
-        var models = _.uniq(Phones.find({company: selectedCompany}, {fields: {'model':1}}).fetch().map(function(x) { return x.model; }), true);
-        return models;
-    },
-    colors: function() {
-        var selectedModel = Session.get("selectedModel");
-        var colors = Phones.find({model: selectedModel}, {fields: {'color':1}}).fetch().map(function(x) { return x.color; });
-        return colors[0];
-    },  
-    storages: function() {
-        var selectedModel = Session.get("selectedModel");
-        var storages = Phones.find({model: selectedModel}, {fields: {'storage':1}}).fetch().map(function(x) { return x.storage; });
-        return storages[0];
-    },
-    picked: function() {
-        return Session.get("selectedModel") && Session.get("selectedColor") && Session.get("selectedStorage");
-    }
+	sellTemplate: function (){
+		return Session.get("sellTemplate");
+	},
+	stepList: function (){
+		return Session.get("stepList");
+	},
+	//TODO curent step
+	currentStep: function (){
+		return Session.get("currentStep");
+	},
+	selectedCompany: function (){
+		return Session.get("selectedCompany");
+	},
+	selectedModel: function (){
+		return Session.get("selectedModel");
+	},
+	selectedColor: function (){
+		return Session.get("selectedColor");
+	},
+	selectedStorage: function (){
+		return Session.get("selectedStorage");
+	},
+	selectedSpecs: function (){
+		return Session.get("selectedSpecs");
+	}
 });
-Template.sell.destroyed = function(){
+
+Template.sell.created = function(){
+	Session.set("sellTemplate", "sellSpecs");
+
+	//TODO need actual progress
+	Session.set("stepList", "Phone Specifications");
+
     Session.set("selectedCompany", "");
     Session.set("selectedModel", "");
     Session.set("selectedColor", "");
     Session.set("selectedStorage", "");
+
+    Session.set("frameCondition", "");
+    Session.set("screenCondition", "");
+    Session.set("buttonsCondition", "");
+    Session.set("cameraCondition", "");
+    Session.set("batteryCondition", "");
+
+    Session.set("selectedUsername", "");
+    Session.set("selectedEmail", "");
+    Session.set("selectedPassword", "");
+    Session.set("selectedRePassword", "");
+
+    Session.set("selectedAddress", "");
+    Session.set("selectedCity", "");
+    Session.set("selectedZip", "");
+    Session.set("selectedCountry", "");
+
+    Session.set("selectedSpecs", false);
 }
 Template.sell.events({
     "click #company": function(e){
@@ -51,3 +78,31 @@ Template.sell.events({
         console.log("addAD called");
     }
 });
+
+Template.sell.destroyed = function(){
+	Session.set("sellTemplate", "sellSpecs");
+	Session.set("stepList", "");
+
+    Session.set("selectedCompany", "");
+    Session.set("selectedModel", "");
+    Session.set("selectedColor", "");
+    Session.set("selectedStorage", "");
+
+    Session.set("frameCondition", "");
+    Session.set("screenCondition", "");
+    Session.set("buttonsCondition", "");
+    Session.set("cameraCondition", "");
+    Session.set("batteryCondition", "");
+
+    Session.set("selectedUsername", "");
+    Session.set("selectedEmail", "");
+    Session.set("selectedPassword", "");
+    Session.set("selectedRePassword", "");
+    
+    Session.set("selectedAddress", "");
+    Session.set("selectedCity", "");
+    Session.set("selectedZip", "");
+    Session.set("selectedCountry", "");
+    
+    Session.set("selectedSpecs", false);
+}

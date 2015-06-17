@@ -1,0 +1,37 @@
+<template name="sellAccount">
+	<div class="row">
+		<h4>Shipping Address</h4>
+	</div>
+
+	<form>
+		<div class="row">
+			<div class="form-group">
+				<label for="inputAddress">Address</label>
+				<input type="text" class="form-control" id="inputAddress" placeholder="1337 Rayceo street">
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group">
+				<label for="inputZip">Zip code</label>
+				<input type="text" class="form-control" id="inputZip" placeholder="94118">
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group">
+				<label for="inputCity">City</label>
+				<input type="text" class="form-control" id="inputCity" placeholder="Montreal">
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group">
+				<label for="inputCountry">Country</label>
+				<input type="text" class="form-control" id="inputCountry" placeholder="Canada">
+			</div>
+		</div>
+		{{#if filled}}
+			<div class="row">
+				<button id="nextAccount" type="button" class="btn btn-default">Next</button>
+			</div>
+		{{/if}}
+	</form>
+</template>

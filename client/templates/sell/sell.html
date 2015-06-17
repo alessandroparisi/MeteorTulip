@@ -1,64 +1,29 @@
 <template name="sell">
 	<div class="row">
-		{{#if companies}}
-			<h4>Select Company</h4>
-		{{/if}}
+		<h1>Sell Your Phone</h1>
 	</div>
 	<div class="row">
-		<div class="btn-group" data-toggle="buttons">
-			{{#each companies}}
-				<label id="company" class="btn btn-primary">
-	    			<input type="radio" name="options" autocomplete="off"> {{this}}
-	  			</label>
-			{{/each}}
+		<p>{{stepList}}</p>
+	</div>
+
+	{{#if selectedSpecs}}
+		<div class="row">
+			<p>{{selectedCompany}}</p>
 		</div>
-	</div>
-	<div class="row">
-		{{#if models}}
-			<h4>Select Model</h4>
-		{{/if}}
-	</div>
-	<div class="row">
-		<div class="btn-group" data-toggle="buttons">
-			{{#each models}}
-				<label id="model" class="btn btn-primary">
-	    			<input type="radio" name="options" autocomplete="off"> {{this}}
-	  			</label>
-			{{/each}}
+
+		<div class="row">
+			<p>{{selectedModel}}</p>
 		</div>
-	</div>
-	<div class="row">
-		{{#if colors}}
-			<h4>Select Color</h4>
-		{{/if}}
-	</div>
-	<div class="row">
-		<div class="btn-group" data-toggle="buttons">
-			{{#each colors}}
-				<label id="color" class="btn btn-primary">
-	    			<input type="radio" name="options" autocomplete="off"> {{this}}
-	  			</label>
-			{{/each}}
+
+		<div class="row">
+			<p>{{selectedColor}}</p>
 		</div>
-	</div>
-	<div class="row">
-		{{#if storages}}
-			<h4>Select Storage</h4>
-		{{/if}}
-	</div>
-	<div class="row">
-		<div class="btn-group" data-toggle="buttons">
-			{{#each storages}}
-				<label id="storage" class="btn btn-primary">
-	    			<input type="radio" name="options" autocomplete="off"> {{this}}
-	  			</label>
-			{{/each}}
+
+		<div class="row">
+			<p>{{selectedStorage}}</p>
 		</div>
-	</div>
-	<div class="row">
-		{{#if picked}}
-			<a href="/sell/info" id="next"><button type="button" class="btn btn-default">Next</button></a>
-		{{/if}}
-	</div>
+	{{/if}}
+
+	{{> Template.dynamic template=sellTemplate}}
 
 </template>
