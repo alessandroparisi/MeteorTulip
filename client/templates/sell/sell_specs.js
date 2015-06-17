@@ -41,12 +41,8 @@ Template.sellSpecs.events({
         Session.set("selectedStorage", e.target.innerText);
     },
     "click #nextSpecs": function(e){
-        if(Meteor.userId()){
-            Session.set("sellTemplate", "sellAccount");
-            Session.set("stepList", Session.get("stepList") + " > Account Information");
-        } else {
-            Session.set("sellTemplate", "sellAuth");
-            Session.set("stepList", Session.get("stepList") + " > Authentication");
-        }
+        Session.set("sellTemplate", "sellCondition");
+        Session.set("stepList", Session.get("stepList") + " > Condition");
+        Session.set("selectedSpecs", true);
     }
 });

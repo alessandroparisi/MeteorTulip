@@ -20,6 +20,9 @@ Template.sell.helpers({
 	},
 	selectedStorage: function (){
 		return Session.get("selectedStorage");
+	},
+	selectedSpecs: function (){
+		return Session.get("selectedSpecs");
 	}
 });
 
@@ -33,13 +36,50 @@ Template.sell.created = function(){
     Session.set("selectedModel", "");
     Session.set("selectedColor", "");
     Session.set("selectedStorage", "");
+
+    Session.set("frameCondition", "");
+    Session.set("screenCondition", "");
+    Session.set("buttonsCondition", "");
+    Session.set("cameraCondition", "");
+    Session.set("batteryCondition", "");
+
+    Session.set("selectedUsername", "");
+    Session.set("selectedEmail", "");
+    Session.set("selectedPassword", "");
+    Session.set("selectedRePassword", "");
+
+    Session.set("selectedAddress", "");
+    Session.set("selectedCity", "");
+    Session.set("selectedZip", "");
+    Session.set("selectedCountry", "");
+
+    Session.set("selectedSpecs", false);
 }
 
 Template.sell.destroyed = function(){
 	Session.set("sellTemplate", "sellSpecs");
 	Session.set("stepList", "");
+
     Session.set("selectedCompany", "");
     Session.set("selectedModel", "");
     Session.set("selectedColor", "");
     Session.set("selectedStorage", "");
+
+    Session.set("frameCondition", "");
+    Session.set("screenCondition", "");
+    Session.set("buttonsCondition", "");
+    Session.set("cameraCondition", "");
+    Session.set("batteryCondition", "");
+
+    Session.set("selectedUsername", "");
+    Session.set("selectedEmail", "");
+    Session.set("selectedPassword", "");
+    Session.set("selectedRePassword", "");
+    
+    Session.set("selectedAddress", "");
+    Session.set("selectedCity", "");
+    Session.set("selectedZip", "");
+    Session.set("selectedCountry", "");
+    
+    Session.set("selectedSpecs", false);
 }

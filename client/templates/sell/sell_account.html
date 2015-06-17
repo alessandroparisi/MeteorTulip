@@ -1,31 +1,8 @@
 <template name="sellAccount">
 	<div class="row">
-		<h3>Phone Specifications</h3>
-	</div>
-
-	<div class="row">
-		<p>{{selectedCompany}}</p>
-	</div>
-
-	<div class="row">
-		<p>{{selectedModel}}</p>
-	</div>
-
-	<div class="row">
-		<p>{{selectedColor}}</p>
-	</div>
-
-	<div class="row">
-		<p>{{selectedStorage}}</p>
-	</div>
-
-	<div class="row">
-		<h3>Account Information</h3>
-	</div>
-
-	<div class="row">
 		<h4>Shipping Address</h4>
 	</div>
+
 	<form>
 		<div class="row">
 			<div class="form-group">
@@ -53,7 +30,7 @@
 		</div>
 		{{#if filled}}
 			<div class="row">
-				<button id="nextAccount" type="submit" class="btn btn-default">Next</button>
+				<button id="nextAccount" type="button" class="btn btn-default">Next</button>
 			</div>
 		{{/if}}
 	</form>

@@ -5,7 +5,25 @@
 	<div class="row">
 		<p>{{stepList}}</p>
 	</div>
-	
+
+	{{#if selectedSpecs}}
+		<div class="row">
+			<p>{{selectedCompany}}</p>
+		</div>
+
+		<div class="row">
+			<p>{{selectedModel}}</p>
+		</div>
+
+		<div class="row">
+			<p>{{selectedColor}}</p>
+		</div>
+
+		<div class="row">
+			<p>{{selectedStorage}}</p>
+		</div>
+	{{/if}}
+
 	{{> Template.dynamic template=sellTemplate}}
 
 </template>

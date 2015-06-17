@@ -24,19 +24,22 @@ Template.sellAccount.helpers({
         return Session.get("selectedModel") && Session.get("selectedColor") && Session.get("selectedStorage");
     },
 	filled: function (){
-		return Session.get("selectedModel") && Session.get("selectedColor") && Session.get("selectedStorage")
+		return Session.get("selectedModel") && Session.get("selectedColor") && Session.get("selectedStorage");
 	}
 });
 
 Template.sellAccount.events({
     "click #nextAccount": function(e){
-        // Session.set("sellTemplate", "sellPayment");
-        // Session.set("stepList", Session.get("stepList") + " > Payment");
 
-        //TODO 
-        console.log($("#inputAddress").val());
+        Session.set("selectedAddress", $("#inputAddress").val());
+        Session.set("selectedCity", $("#inputCity").val());
+        Session.set("selectedZip", $("#inputZip").val());
+        Session.set("selectedCountry", $("#inputCountry").val());
 
-        //TODO put at end of wizard
-        // Meteor.call("addAd", Session.get("selectedCompany"), Session.get("selectedModel"), Session.get("selectedColor"), Session.get("selectedStorage"));
+        //TODO put after payment
+        Meteor.call("addAd", Session.get("selectedCompany"), Session.get("selectedModel"), Session.get("selectedColor"), Session.get("selectedStorage"));
+
+        Session.set("sellTemplate", "sellPayment");
+        Session.set("stepList", Session.get("stepList") + " > Payment");
     }
 });
