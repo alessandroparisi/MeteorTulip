@@ -1,0 +1,66 @@
+<template name="buySubmit">
+	<div class="col-md-6">
+		<div class="thumbnail">
+	      <!-- <img src="..." alt="..."> -->
+	      <div class="caption">
+	        <h3>{{model}} - {{company}}</h3>
+	        <p>Storage (GB): {{storage}}</p>
+	        <p>Color: {{color}}</p>
+	        <p style="color:gray;font-size:75%">Posted by {{email}}</p>
+	      </div>
+    	</div>
+	</div>
+	<div class="col-md-6">
+		<div class="thumbnail">
+	      <!-- <img src="..." alt="..."> -->
+	     	<div class="caption">
+				<div class="row">
+					<h4>Shipping Address</h4>
+				</div>
+				<form>
+					<div class="row">
+						<div class="form-group">
+							<label for="inputAddress">Address</label>
+							<input type="text" class="form-control" id="inputAddress" placeholder="1337 RayCDO street">
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group">
+							<label for="inputZip">Zip code</label>
+							<input type="text" class="form-control" id="inputZip" placeholder="94118">
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group">
+							<label for="inputCity">City</label>
+							<input type="text" class="form-control" id="inputCity" placeholder="Montreal">
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group">
+							<label for="inputCountry">Country</label>
+							<input type="text" class="form-control" id="inputCountry" placeholder="Canada">
+						</div>
+					</div>
+				</form>			
+		    	<form method="post" action="https://www.sandbox.paypal.com/cgi-bin/webscr&#8221;" class="paypal-button" target="_top" style="opacity: 1;">
+				    <div class="hide" id="errorBox"></div>
+				    <input type="hidden" name="button" value="buynow">
+				    <input type="hidden" name="business" value="ray.guo93-facilitator@hotmail.com">
+				    <input type="hidden" name="item_name" value="{{model}}">
+				    <input type="hidden" name="quantity" value="1">
+				    <input type="hidden" name="amount" value="{{price}}">
+				    <input type="hidden" name="currency_code" value="CAD">
+				    <input type="hidden" name="shipping" value="5">
+				    <input type="hidden" name="tax" value="5">
+				    <input type="hidden" name="notify_url" value="http://localhost:3000/paypalCallback">
+				    <input type="hidden" name="env" value="www.sandbox">
+				    <input type="hidden" name="cmd" value="_xclick">
+				    <input type="hidden" name="bn" value="JavaScriptButton_buynow">
+				    <button type="submit" class="paypal-button large" id="paypal-button-buy" disabled>Pay</button>
+				  </form>
+			</div>
+		</div>
+	</div>
+
+</template>

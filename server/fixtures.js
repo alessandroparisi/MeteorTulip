@@ -52,11 +52,47 @@ if(Ads.find().count() === 0) {
 
 	// iPhones
 	insertAd('Apple', 'iPhone 6', '16', 'Gold', 400, sampleCondition, new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5', '32', 'Gold', 200, sampleCondition, new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5s', '16', 'Silver', 300, sampleCondition, new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 5c', '16', 'White', 250, sampleCondition, new Date(), 'ray@bay.bay');
-	insertAd('Apple', 'iPhone 4', '16', 'Black', 100, sampleCondition, new Date(), 'ray@bay.bay');
-
+	insertAd('Apple', 'iPhone 5', '32', 'Gold', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 5s', '16', 'Silver', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 5c', '16', 'White', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 4', '16', 'Black', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 4s', '8', 'White', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 6', '16', 'Gold', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 5', '32', 'Gold', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 5s', '16', 'Silver', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 5c', '16', 'White', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 4', '16', 'Black', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 4s', '8', 'White', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 6', '16', 'Gold', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 5', '32', 'Gold', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 5s', '16', 'Silver', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 5c', '16', 'White', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 4', '16', 'Black', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 4s', '8', 'White', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 6', '16', 'Gold', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 5', '32', 'Gold', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 5s', '16', 'Silver', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 5c', '16', 'White', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 4', '16', 'Black', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 4s', '8', 'White', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 6', '16', 'Gold', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 5', '32', 'Gold', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 5s', '16', 'Silver', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 5c', '16', 'White', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 4', '16', 'Black', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 6', '16', 'Gold', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 5', '32', 'Gold', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 5s', '16', 'Silver', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 5c', '16', 'White', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 4', '16', 'Black', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 4s', '8', 'White', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 4s', '8', 'White', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 6', '16', 'Gold', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 5', '32', 'Gold', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 5s', '16', 'Silver', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 5c', '16', 'White', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 4', '16', 'Black', 400, sampleCondition, new Date(), 'ray@bay.bay');
+	insertAd('Apple', 'iPhone 4s', '8', 'White', 400, sampleCondition, new Date(), 'ray@bay.bay');
 }
 
 // var sampleProfile = Profiles.findOne({userId: Users.find({}).fetch()[0]._id});
